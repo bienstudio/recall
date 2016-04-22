@@ -13,12 +13,15 @@
 #  reset_password_token            :string
 #  reset_password_token_expires_at :datetime
 #  reset_password_email_sent_at    :datetime
+#  role                            :integer          default("0")
 #
 
 class User < ApplicationRecord
+  enum role: [:user, :admin]
+
   authenticates_with_sorcery!
 
-  validates :email, presence: true
+  validates :email, presence: true, uniqueness: true
 
   has_many :subjects
 end
