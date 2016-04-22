@@ -36,8 +36,9 @@ group :development do
   gem 'quiet_assets'
 
   gem 'annotate'
-
   gem 'rails-erd'
+
+  gem 'rubocop'
 end
 
 group :test do
