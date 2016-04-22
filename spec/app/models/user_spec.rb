@@ -15,7 +15,7 @@ describe User, type: :model do
     expect(user).to define_enum_for :role
   end
 
-  it 'has many subjects' do
-    expect(user).to have_many :subjects
+  it 'has many courses' do
+    expect(user).to have_many :courses
   end
 end

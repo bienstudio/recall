@@ -23,5 +23,5 @@ class User < ApplicationRecord
 
   validates :email, presence: true, uniqueness: true
 
-  has_many :subjects
+  has_many :courses
 end
