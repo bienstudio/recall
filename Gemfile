@@ -8,6 +8,10 @@ gem 'pg', '~> 0.18'
 
 gem 'puma'
 
+gem 'sorcery'
+gem 'pundit'
+gem 'active_interaction', '~> 3.0'
+
 gem 'haml'
 
 gem 'turbolinks', '~> 5.x'
@@ -17,12 +21,12 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 
-
 gem 'listen'
 
 group :development, :test do
   gem 'pry-rails'
   gem 'log_buddy'
+  gem 'rubocop'
 end
 
 group :development do
