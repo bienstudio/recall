@@ -15,4 +15,8 @@ describe Course, type: :model do
   it 'requires a user' do
     expect(course).to validate_presence_of :user
   end
+
+  it 'has many tasks' do
+    expect(course).to have_many :tasks
+  end
 end

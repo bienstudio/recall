@@ -1,22 +1,20 @@
 # == Schema Information
 #
-# Table name: projects
+# Table name: tasks
 #
 #  id         :integer          not null, primary key
-#  name       :string
-#  notes      :string
+#  text       :string
 #  due        :datetime
+#  completed  :boolean
 #  user_id    :integer
-#  subject_id :integer
+#  project_id :integer
+#  course_id  :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Project < ApplicationRecord
+class Task < ApplicationRecord
   belongs_to :user
+  belongs_to :project
   belongs_to :course
-
-  has_many :tasks
-
-  validates :name, presence: true
 end

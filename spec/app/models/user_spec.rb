@@ -18,4 +18,12 @@ describe User, type: :model do
   it 'has many courses' do
     expect(user).to have_many :courses
   end
+
+  it 'has many projects' do
+    expect(user).to have_many :projects
+  end
+
+  it 'has many tasks' do
+    expect(user).to have_many :tasks
+  end
 end

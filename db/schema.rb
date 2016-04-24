@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160424013016) do
+ActiveRecord::Schema.define(version: 20160424014920) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,12 +32,12 @@ ActiveRecord::Schema.define(version: 20160424013016) do
     t.string   "notes"
     t.datetime "due"
     t.integer  "user_id"
-    t.integer  "course_id"
+    t.integer  "subject_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "projects", ["course_id"], name: "index_projects_on_course_id", using: :btree
+  add_index "projects", ["subject_id"], name: "index_projects_on_subject_id", using: :btree
   add_index "projects", ["user_id"], name: "index_projects_on_user_id", using: :btree
 
   create_table "subjects", force: :cascade do |t|
@@ -50,6 +50,21 @@ ActiveRecord::Schema.define(version: 20160424013016) do
   end
 
   add_index "subjects", ["user_id"], name: "index_subjects_on_user_id", using: :btree
+
+  create_table "tasks", force: :cascade do |t|
+    t.string   "text"
+    t.datetime "due"
+    t.boolean  "completed"
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.integer  "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "tasks", ["course_id"], name: "index_tasks_on_course_id", using: :btree
+  add_index "tasks", ["project_id"], name: "index_tasks_on_project_id", using: :btree
+  add_index "tasks", ["user_id"], name: "index_tasks_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                                       null: false
