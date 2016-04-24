@@ -15,5 +15,7 @@ Bundler.require(*Rails.groups)
 
 module Recall
   class Application < Rails::Application
+    config.autoload_paths += Dir.glob("#{config.root}/app/policies/*")
+    config.autoload_paths += Dir.glob("#{config.root}/app/interactions/*")
   end
 end
