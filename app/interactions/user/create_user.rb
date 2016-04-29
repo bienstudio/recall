@@ -9,6 +9,7 @@ class CreateUser < ApplicationInteraction
 
   def execute
     _user = User.new(user)
+    _user.save
 
     _user
   end
