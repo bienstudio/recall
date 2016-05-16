@@ -1,0 +1,35 @@
+.form
+  input, textarea
+    +border-radius(2px)
+
+    box-sizing: border-box
+    border: 1px solid $color-gray-an1
+    outline: none
+    padding: rhythm(0.25)
+
+    &:focus
+      box-shadow: 0 0 3px rgba($color-blue, 0.75)
+
+  label
+    font-weight: $font-weight-bold
+
+  input[type="submit"]
+    box-shadow: none
+    border: none
+    padding: rhythm(0.25) rhythm(0.5)
+
+  &__row
+    & + &
+      margin-top: rhythm(0.5)
+
+    &--actions
+      +clearfix
+
+      *
+        display: inline-block
+
+      .left
+        float: left
+
+      .right
+        float: right

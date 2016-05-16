@@ -1,0 +1,36 @@
+.header
+  +clearfix
+
+  background: $color-gray-an3
+  padding: rhythm(0.5) rhythm(1)
+
+  &__logo
+    display: inline-block
+    float: left
+    font-size: $font-size-1
+    font-weight: $font-weight-bold
+    margin-right: rhythm(1)
+
+    a
+      color: $color-text
+
+      &:hover
+        color: shade($color-blue, 15%)
+
+  &__nav-toggle
+    display: none
+
+  @media (max-width: $max-width-narrow)
+    &__logo
+      display: block
+      float: none
+
+    &__nav-toggle
+      display: block
+      font-size: $font-size-1
+      position: absolute
+      right: rhythm(1)
+      top: rhythm(0.6)
+
+      &:hover
+        cursor: pointer

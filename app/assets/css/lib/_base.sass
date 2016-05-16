@@ -1,0 +1,28 @@
+@import "bourbon"
+@import "reset"
+@import "variables"
+@import "functions"
+@import "mixins"
+@import "grid"
+
+@import "ss-gizmo"
+@import "icons"
+@import "buttons"
+@import "forms"
+
+body
+  background: $color-white
+  color: $color-text
+  font-family: $font-family-sans-serif
+  font-size: $font-size-base
+  line-height: $line-height-base + 0em
+
+a
+  color: $color-blue
+  text-decoration: none
+
+  &:hover
+    color: shade($color-blue, 15%)
+
+img
+  max-width: 100%

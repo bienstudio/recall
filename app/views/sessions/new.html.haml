@@ -1,0 +1,13 @@
+%header.card__header
+  %h2.card__title Login
+.card__content
+  = form_tag sessions_create_url, class: 'form', type: :post do
+    .form__row
+      %p= label_tag 'user[email]', 'Email'
+      %p= email_field_tag 'user[email]'
+    .form__row
+      %p= label_tag 'user[password]', 'Password'
+      %p= password_field_tag 'user[password]'
+    .form__row.form__row--actions
+      = link_to "<i class='ss-icon icon-adjust'>back</i> Back".html_safe, root_path(subdomain: ''), class: "button left"
+      = button_tag "Login <i class='ss-icon icon-adjust'>login</i>".html_safe, class: "button button--green right", type: 'submit'

@@ -1,0 +1,42 @@
+!!!
+%html{lang: "en"}
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+
+    %title Recall
+
+    = stylesheet_link_tag "application", "data-turbolinks-track" => true
+
+    = csrf_meta_tags
+
+    %script{src: "https://use.typekit.net/uzt6kno.js"}
+    :coffeescript
+      try
+        Typekit.load async: true
+      catch e
+        console.log e
+  %body
+    %header.header{role: "banner"}
+      .header__logo
+        = link_to "Recall", root_path
+      %span.header__nav-toggle
+        %i.ss-icon rows
+      %nav.nav.nav--header.nav--mobile
+        %ul.nav__list
+          %li.nav__item
+            = link_to "Tasks", tasks_path, class: "nav__link"
+          %li.nav__item
+            = link_to "Calendar", calendar_path, class: "nav__link"
+          %li.nav__item
+            = link_to "Reminders", reminders_path, class: "nav__link"
+      %nav.nav.nav--header.nav--right
+        %ul.nav__list
+          %li.nav__item
+            = link_to "Settings", settings_path, class: "nav__link"
+          %li.nav__item
+            = link_to "Logout", logout_path, class: "nav__link"
+    %main{role: "main"}
+      = yield
+
+    = javascript_include_tag "application", "data-turbolinks-track" => true

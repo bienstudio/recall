@@ -17,9 +17,13 @@ gem 'haml'
 gem 'turbolinks', '~> 5.x'
 
 gem 'sass-rails', '~> 5.0'
+gem 'bourbon'
+gem 'susy'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
+
+gem 'gemoji'
 
 gem 'listen'
 
@@ -30,6 +34,8 @@ group :development, :test do
 end
 
 group :development do
+  gem 'foreman'
+
   gem 'better_errors'
   gem 'binding_of_caller'
 

@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root to: 'recall#index'
 
-  # Serve websocket cable requests in-process
-  # mount ActionCable.server => '/cable'
+  get '/calendar', to: 'recall#calendar'
+
+  get '/login', to: 'sessions#new'
+  post '/sessions/create', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy'
+
+  get '/join', to: 'users#new'
+  get '/settings', to: 'users#settings'
+
+  resources :tasks
+  resources :reminders
+  resources :courses
+  resources :projects
 end

@@ -1,0 +1,46 @@
+.task
+  +clearfix
+
+  // box-shadow: inset 0px 0px 0.5px 0px $color-gray-a0
+  // background: $color-gray-an3
+  border-top: 1px solid $color-gray-an3
+  box-sizing: border-box
+  padding: rhythm(0.5) 0
+
+  &:last-child
+    border-bottom: 1px solid $color-gray-an3
+
+  &__checkbox
+    display: inline-block
+    float: left
+    width: 5%
+
+  &__content
+    display: inline-block
+    float: left
+    width: 95%
+
+  footer
+    +clearfix
+
+    font-size: $font-size-n1
+
+  &__project, &__course
+    a
+      color: $color-gray-a1
+
+  &__project
+    &:after
+      content: '\2022'
+      color: $color-gray-an1
+
+  &__actions
+    float: right
+
+    a
+      color: $color-gray-an1
+      margin-right: rhythm(0.25)
+
+  &__due
+    color: $color-gray-a1
+    float: right

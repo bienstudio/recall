@@ -1,0 +1,31 @@
+.dashboard
+  %section.dashboard__tasks.section
+    .tasks
+      .task
+        %aside.task__checkbox
+          = check_box_tag :complete, class: 'task__toggle'
+        %section.task__content
+          %p.task__text Do a thing
+          %footer
+            %span.task__project
+              = link_to "Marvin", "#"
+            %span.task__course
+              = link_to "Compilers", "#"
+            %span.task__due
+              3 days
+            -# %span.task__actions
+            -#   = link_to "Edit", "#"
+            -#   = link_to "Delete", "#"
+
+  %aside.dashboard__contexts
+    %section.dashboard__projects.section
+      %h4= link_to "Projects", projects_path
+      .projects
+        .project
+    %section.dashboard__courses.section
+      %h4= link_to "Courses", courses_path
+      .courses
+        .course
+          %span
+            %p.course__name Compilers
+            %p.course__code CMPT365N
